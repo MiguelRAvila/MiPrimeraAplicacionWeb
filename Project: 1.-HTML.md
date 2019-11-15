@@ -74,4 +74,42 @@ Dentro de nuestro ``div`` con clase "add-item" encontraremos el ícono de añadi
         </div>
 ```
 
+## 📎 Resumen
+Al final de cada paso para llegar a nuestra primera Aplicación Web, pondré un ejemplo de como debió quedar tu código para poder continuar con el taller ❤. Tu ``HTML`` debe lucir de esta forma:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="header">
+            <div class="clear">
+                <i class="fa fa-refresh"></i>
+            </div>
+            <div id="date"></div>
+        </div>
+        <div class="contenido">
+            <ul id="lista">
+                <!-- <li class="item">
+                    <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+                    <p class="text">Beber Café</p>
+                    <i class="fa fa-trash-o de" job="delete" id="0"></i>
+                </li> -->
+            </ul>
+        </div>
+        <div class="add-item">
+            <i class="fa fa-plus-circle"></i>
+            <input type="text" id="input" placeholder="Añadir una tarea">
+        </div>
+    </div>
+</body>
+</html>
+```
+
 ## [Anterior](https://github.com/WorkshopTechnology/Materiales/blob/master/Talleres/CuentosDeJavascript/1.5.-comentariosVariables,prettyThings.md) - [Siguiente](https://github.com/WorkshopTechnology/Materiales/blob/master/Talleres/CuentosDeJavascript/4.-%20reusandoConFunciones.md)
