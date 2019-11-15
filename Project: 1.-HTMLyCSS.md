@@ -6,7 +6,7 @@
 
 ### 💀 Primero el esqueleto
 Primero, lo más divetido. Hacer un documento HTML básico con su ``head`` y ``body``, además de las etiquetas meta. Eso, o si tenemos Visual Studio Code, solamente escribir ``html:5``. 
-con un bracket, entre cada elemento colocaremos una coma, así:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
