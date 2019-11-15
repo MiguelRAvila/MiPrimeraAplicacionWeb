@@ -1,10 +1,10 @@
-# :postbox: ¿Cómo arreglar un arreglo? (y otro tipo de datos)
+# 💅 Hagamos que quede lindo.
 
 <p align="center">
   <img width="480" height="320" src="https://github.com/WorkshopTechnology/Materiales/blob/master/Talleres/CuentosDeJavascript/UnboxingDoodle.svg">
 </p>
 
-### :file_folder: Arreglo de datos
+### 💀 Primero el esqueleto
 Con los arreglos de datos o ``arrays``, en javascript podemos guardar múltiples datos en un solo lugar. Su definición comienza y termina 
 con un bracket, entre cada elemento colocaremos una coma, así:
 ```javascript
