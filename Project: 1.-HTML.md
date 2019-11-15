@@ -54,8 +54,8 @@ Dentro del header colocaremos otro ``div`` para que contenga nuestro ícono de r
 En nuestro contenido, más especificamente, dentro de nuestra ``ul`` con una id de "lista" escribiremos un item de ejemplo para que podamos guiarnos y más tarde lo diseñemos de la mejor forma posible. 
 
 ```html
-        <div class="content">
-            <ul id="list">
+        <div class="contenedor">
+            <ul id="lista">
                 <li class="item">
                     <i class="fa fa-circle-thin co" job="complete" id="0"></i>
                     <p class="text">Tomar un café</p>
