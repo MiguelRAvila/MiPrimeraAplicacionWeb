@@ -1,7 +1,7 @@
 # 💅 Hagamos que quede lindo.
 
 <p align="center">
-  <img width="480" height="320" src="https://github.com/WorkshopTechnology/Materiales/blob/master/Talleres/CuentosDeJavascript/UnboxingDoodle.svg">
+  <img  src="https://github.com/MiguelRAvila/MiPrimeraAplicacionWeb/blob/master/image4.png">
 </p>
 
 ### 💀 Primero el esqueleto
