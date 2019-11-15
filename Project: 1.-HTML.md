@@ -34,7 +34,7 @@ Debemos tener muy en cuenta cual es el contenido de nuestra aplicación web y co
               
             </ul>
         </div>
-        <div class="add-to-do">
+        <div class="add-item">
 
         </div>
     </div>
