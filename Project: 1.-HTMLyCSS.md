@@ -39,23 +39,16 @@ Debemos tener muy en cuenta cual es el contenido de nuestra aplicación web y co
         </div>
     </div>
 ```
-### 💀 Primero el esqueleto
-Primero, lo más divetido. Hacer un documento HTML básico con su ``head`` y ``body``, además de las etiquetas meta. Eso, o si tenemos Visual Studio Code, solamente escribir ``html:5``. 
+### 📐 ¿Header?
+Dentro del header colocaremos otro ``div`` para que contenga nuestro ícono de reinicio así como otro ``div`` para contener la fecha de nuestra lista.
 
 ```html
-<div class="contenedor">
         <div class="header">
-
+            <div class="clear">
+                <i class="fa fa-refresh"></i>
+            </div>
+            <div id="date"></div>
         </div>
-        <div class="contenido">
-            <ul id="lista">
-              
-            </ul>
-        </div>
-        <div class="add-to-do">
-
-        </div>
-    </div>
 ```
 ### 💀 Primero el esqueleto
 Primero, lo más divetido. Hacer un documento HTML básico con su ``head`` y ``body``, además de las etiquetas meta. Eso, o si tenemos Visual Studio Code, solamente escribir ``html:5``. 
