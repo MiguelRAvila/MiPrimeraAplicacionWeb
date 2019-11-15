@@ -7,8 +7,19 @@
 ### 💀 Primero el esqueleto
 Con los arreglos de datos o ``arrays``, en javascript podemos guardar múltiples datos en un solo lugar. Su definición comienza y termina 
 con un bracket, entre cada elemento colocaremos una coma, así:
-```javascript
-var miPrimeraCarga = ["FIS", "RSU", "Algoritmia"];
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
 ```
 Cabe destacar que en Javascript un arreglo no está limitado solo a un tipo de datos, sino puede estar a muchos a la vez.
 ```javascript
