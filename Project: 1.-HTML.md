@@ -74,7 +74,7 @@ Dentro de nuestro ``div`` con clase "add-item" encontraremos el ícono de añadi
         </div>
 ```
 
-## 📎 Resumen
+## 👅 Resumen
 Al final de cada paso para llegar a nuestra primera Aplicación Web, pondré un ejemplo de como debió quedar tu código para poder continuar con el taller ❤. Tu ``HTML`` debe lucir de esta forma:
 
 ```html
