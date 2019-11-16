@@ -7,6 +7,9 @@
 ## 🎨 ¡Ahora el diseño!
 Para que la aplicación web se vea como la presentamos originalmente, debemos trabajar con un archivo de ``css`` para cambiar y mejorar los diseños. Primero cambiaremos el ``body``, para ello escribiremos la etiqueta "body" completa y realizaremos los siguientes cambios:
 
+* El ``padding`` y el ``margin`` será de 0
+* Su ``font-family`` será la que descargamos con Google Fonts
+
 ```css
 body{
     padding: 0;
