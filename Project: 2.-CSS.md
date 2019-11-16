@@ -4,22 +4,16 @@
   <img  src="https://github.com/MiguelRAvila/MiPrimeraAplicacionWeb/blob/master/image5.png">
 </p>
 
-## 💀 Primero el esqueleto
-Primero, lo más divetido. Hacer un documento HTML básico con su ``head`` y ``body``, además de las etiquetas meta. Eso, o si tenemos Visual Studio Code, solamente escribir ``html:5``. 
+## 🎨 ¡Ahora el diseño!
+Para que la aplicación web se vea como la presentamos originalmente, debemos trabajar con un archivo de ``css`` para cambiar y mejorar los diseños. Primero cambiaremos el ``body``, para ello escribiremos la etiqueta "body" completa y realizaremos los siguientes cambios:
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+```css
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0.1);
+    font-family: 'Titillium Web', sans-serif;
+}
 ```
 ### 📏 Maquetemos
 Debemos tener muy en cuenta cual es el contenido de nuestra aplicación web y como podemos maquetarla para que podamos añadirle estilos y posteriormente darle funcionalidad con Javascript. Esto lo haremos en el ``<body>`` y usaremos las siguientes etiquetas:
