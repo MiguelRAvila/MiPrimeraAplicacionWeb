@@ -1,7 +1,7 @@
 # 💅 And play harder
 
 <p align="center">
-  <img  src="https://github.com/MiguelRAvila/MiPrimeraAplicacionWeb/blob/master/image4.png">
+  <img  src="https://github.com/MiguelRAvila/MiPrimeraAplicacionWeb/blob/master/image5.png">
 </p>
 
 ## 💀 Primero el esqueleto
