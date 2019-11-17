@@ -18,23 +18,19 @@ body{
     font-family: 'Titillium Web', sans-serif;
 }
 ```
-### 📏 Maquetemos
-Debemos tener muy en cuenta cual es el contenido de nuestra aplicación web y como podemos maquetarla para que podamos añadirle estilos y posteriormente darle funcionalidad con Javascript. Esto lo haremos en el ``<body>`` y usaremos las siguientes etiquetas:
+### 📏 Hora de diseñar clases
+Para poder añadir un diseño css a una clase, se usa el ``.`` antes del nombre de la clase para poder modificar su diseño. Primero haremos cambios al contenedor con la etiqueta ``.contenedor``.
 
-```html
-<div class="contenedor">
-        <div class="header">
+* El ``padding`` es de 10px
+* Su ``width`` será de 380px
+* Su ``margin`` tiene un valor nulo y ``auto``
 
-        </div>
-        <div class="contenido">
-            <ul id="lista">
-              
-            </ul>
-        </div>
-        <div class="add-item">
-
-        </div>
-    </div>
+```css
+.contenedor{
+    padding:10px;
+    width:380px;
+    margin:0 auto;
+}
 ```
 ### 📐 ¿Header?
 Dentro del header colocaremos otro ``div`` para que contenga nuestro ícono de reinicio así como otro ``div`` para contener la fecha de nuestra lista.
