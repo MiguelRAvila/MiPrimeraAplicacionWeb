@@ -22,8 +22,8 @@ body{
 Para poder añadir un diseño css a una clase, se usa el ``.`` antes del nombre de la clase para poder modificar su diseño. Primero haremos cambios al contenedor con la etiqueta ``.contenedor``.
 
 * El ``padding`` es de 10px
-* Su ``width`` será de 380px
-* Su ``margin`` tiene un valor nulo y ``auto``
+* Su ``width`` será de 380px, para darle un valor absoluto de ancho
+* Su ``margin`` tiene un valor nulo y ``auto``, para centrar nuestra aplicación.
 
 ```css
 .contenedor{
@@ -32,16 +32,27 @@ Para poder añadir un diseño css a una clase, se usa el ``.`` antes del nombre 
     margin:0 auto;
 }
 ```
-### 📐 ¿Header?
-Dentro del header colocaremos otro ``div`` para que contenga nuestro ícono de reinicio así como otro ``div`` para contener la fecha de nuestra lista.
+### 📐 Diseñemos el Header
+El ``header`` contiene muchos cambios en cuanto a su diseño.
 
-```html
-        <div class="header">
-            <div class="clear">
-                <i class="fa fa-refresh"></i>
-            </div>
-            <div id="date"></div>
-        </div>
+
+* El ``width`` es de 380px para definir su ancho.
+* Su ``height`` es de 200px para que tenga el largo que vemos en el diseño original
+* Su ``background-image`` tendrá una ``url`` que lo vincule directamente a la imagen que queramos ponerle a nuestra lista
+* Otras propiedades como el ``background-size`` y el ``background-repeat`` se usan para brindarle unas caracteristicas adicionales como el tamaño de 100% 200% para ajustarlo al tamaño del Header, o para decirle a nuestro diseño que no queremos que ese fondo se repita para rellenar el espacio donde se encuentra.
+* El ``border-radius`` se usa para dotar de un borde redondeado al header, usaremos 15px 15px 0 0 para darle un borde redondeado solo a los extremos superiores.
+* La ``position`` tendrá un valor "relative" para que se mantenga dentro de nuestro contenedor
+
+```css
+.header{
+    width: 380px;
+    height:200px;
+    background-image: url('../img/bg2.jpg');
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+}
 ```
 ### 📃 Nuestro contenido: la lista
 En nuestro contenido, más especificamente, dentro de nuestra ``ul`` con una id de "lista" escribiremos un item de ejemplo para que podamos guiarnos y más tarde lo diseñemos de la mejor forma posible. 
