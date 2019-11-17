@@ -18,7 +18,7 @@ body{
     font-family: 'Titillium Web', sans-serif;
 }
 ```
-### 📏 Hora de diseñar clases
+### 🖍 Hora de diseñar clases
 Para poder añadir un diseño css a una clase, se usa el ``.`` antes del nombre de la clase para poder modificar su diseño. Primero haremos cambios al contenedor con la etiqueta ``.contenedor``.
 
 * El ``padding`` es de 10px
@@ -32,7 +32,7 @@ Para poder añadir un diseño css a una clase, se usa el ``.`` antes del nombre 
     margin:0 auto;
 }
 ```
-### 📐 Diseñemos el Header
+### 🖌 Diseñemos el Header
 El ``header`` contiene muchos cambios en cuanto a su diseño.
 
 
@@ -54,6 +54,50 @@ El ``header`` contiene muchos cambios en cuanto a su diseño.
     position: relative;
 }
 ```
+Dentro de nuestro header, tenemos un ``div`` con la clase ``clear`` que representa al botón que encontramos en la parte superior derecha de nuestro proyecto. Para diseñar y colocar este espacio donde estará el botón, usaremos los siguientes estilos:
+
+* El ``widht`` y ``height`` son de 30px
+* Su ``position`` tiene un valor "absolute" que significa que se lo asignaremos nosotros para que quede exactamente donde queremos
+* Su valor de posición ``right`` tiene un valor de 20px y su valor de posición ``top`` también tiene 20px
+
+```css
+.clear{
+    width : 30px;
+    height: 30px;
+    position: absolute;
+    right:20px;
+    top: 20px;
+}
+```
+
+#### 🎞 Animaciones y Pseudo-clases
+
+Vayamos aún más allá. Dentro de nuestro ``div`` con clase ``clear`` tenemos una etiqueta ``i``,  en dondé estará el icono que queremos utilizar para borrar todos los elementos de nuestra lista. Este pequeño pero importante elemento contiene dos propiedades muy espaciales que involucran tanto animaciones como algo llamado Pseudo-clases.
+
+Primero veamos el comportamiento y diseño que tiene el icono sin activarlo. Su diseño es bastante simple, solamente tiene las propiedades del ``font-size`` con un valor de 30px y su ``color`` con un valor de #FFF para darle un blanco.
+
+```css
+.clear i{
+    font-size: 30px;
+    color: #FFF;
+}
+```
+En cambio, en su segundo diseño, tenemos algo sumamente curioso. Este ".clear i", obtiene la Pseudo-clase ``hover``, con lo que únicamente se verá el diseño descrito a continuación cuando el usuario coloca su puntero por encima del icono.
+
+* La etiqueta ``cursor`` con el valor ``pointer`` cambia la forma del cursor. 
+* El text-shadow le brinda de una pequeña sombra
+* Nuestra primera animación es la propiedad ``transform`` con un valor ``rotate`` de "45 grados"
+
+```css
+.clear i:hover{
+    cursor: pointer;
+    text-shadow: 1px 3px 5px #000;
+    transform: rotate(45deg);
+}
+```
+
+
+
 ### 📃 Nuestro contenido: la lista
 En nuestro contenido, más especificamente, dentro de nuestra ``ul`` con una id de "lista" escribiremos un item de ejemplo para que podamos guiarnos y más tarde lo diseñemos de la mejor forma posible. 
 
