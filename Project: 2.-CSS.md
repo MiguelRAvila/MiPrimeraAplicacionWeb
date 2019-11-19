@@ -173,6 +173,43 @@ Comencemos con el pequeño circulo al lado izquierdo. Este es el que nos indica 
 .item i.co:hover{
     cursor: pointer;
 }
+
+.fa-check-circle{
+    color:#6eb200;
+}
+```
+El siguiente elemento que tienen nuestras tareas es el texto con la etiqueta ``p`` y con la clase "text". A su vez, cuando la tarea se ve acompletada, este texto sufrirá de un cambio, las palabras dentro del texto tendrán una linea que las atraviese. Esto lo haremos con herramientas de javascript, pero crearemos las clases aquí. El texto tiene las siguientes propiedades:
+
+```css
+.item p.text{
+    position: absolute;
+    padding:0;
+    margin:0;
+    font-size: 20px;
+    left:50px;
+    top:5px;
+    background-color: #FFF;
+    max-width:285px;
+}
+
+.lineThrough{
+    text-decoration: line-through;
+    color : #ccc;
+}
+```
+Por último tenemos el icono del bote de basura para poder eliminar nuestra tarea. Al igual que el circulo tiene un pequeño ``hover`` para notar que el usuario coloca su cursor sobre el elemento.
+
+```css
+.item i.de{
+    position: absolute;
+    font-size: 25px;
+    right:15px;
+    top:10px;
+}
+.item i.de:hover{
+    color:#af0000;
+    cursor: pointer;
+}
 ```
 
 ### 📎 ¿Dónde añadimos un elemento a la lista?
