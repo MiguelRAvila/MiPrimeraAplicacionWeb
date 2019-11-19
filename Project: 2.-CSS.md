@@ -212,52 +212,230 @@ Por último tenemos el icono del bote de basura para poder eliminar nuestra tare
 }
 ```
 
-### 📎 ¿Dónde añadimos un elemento a la lista?
-Dentro de nuestro ``div`` con clase "add-item" encontraremos el ícono de añadir una nueva tarea a la lista, así como un ``input`` para que el usuario ingrese su tarea. 
+### 📎 Add-Item, sus estilos 
+La sección que contiene el espacio donde colocaremos el texto para añadir nuestras tareas, contiene 3 partes escenciales a las que debemos dar forma y estilos. La primera es a toda la sección en si con la clase ``add-item``, el icono de añadir item, y por ultimo el ``input``, que es donde colocamos el texto.
 
-```html
-        <div class="add-item">
-            <i class="fa fa-plus-circle"></i>
-            <input type="text" id="input" placeholder="Añadir una tarea">
-        </div>
+```css
+.add-item{
+    position: relative;
+    width: 360px;
+    height:40px;
+    background-color: #FFF;
+    padding: 10px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
 ```
+Ahora tenemos el pequeño icono que indica que agreguemos elementos:
 
-## 👅 Resumen
+```css
+.add-item i{
+    position: absolute;
+    font-size: 40px;
+    color: #4162f6;
+}
+```
+Por último, daremos estilo al ``input``
+
+```css
+.add-item input{
+    position: absolute;
+    left: 50px;
+    height: 35px;
+    width: 310px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    padding-left:10px;
+}
+```
+### 💡 Web-kit 
+```css
+.add-item input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-item input::-moz-placeholder { /* Firefox 19 */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-item input:-ms-input-placeholder { /* IE 10 */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-item input:-moz-placeholder { /* Firefox 18 */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+```
+## 👅 Resumen del css
 Al final de cada paso para llegar a nuestra primera Aplicación Web, pondré un ejemplo de como debió quedar tu código para poder continuar con el taller ❤. Tu ``HTML`` debe lucir de esta forma:
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>To Do List</title>
-</head>
-<body>
-    <div class="contenedor">
-        <div class="header">
-            <div class="clear">
-                <i class="fa fa-refresh"></i>
-            </div>
-            <div id="date"></div>
-        </div>
-        <div class="contenido">
-            <ul id="lista">
-                <!-- <li class="item">
-                    <i class="fa fa-circle-thin co" job="complete" id="0"></i>
-                    <p class="text">Beber Café</p>
-                    <i class="fa fa-trash-o de" job="delete" id="0"></i>
-                </li> -->
-            </ul>
-        </div>
-        <div class="add-item">
-            <i class="fa fa-plus-circle"></i>
-            <input type="text" id="input" placeholder="Añadir una tarea">
-        </div>
-    </div>
-</body>
-</html>
+```css
+/* Body */
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0.1);
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* contenedor */
+.contenedor{
+    padding:10px;
+    width:380px;
+    margin:0 auto;
+}
+
+/* Header  */
+.header{
+    width: 380px;
+    height:200px;
+    background-image: url('../img/bg2.jpg');
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+}
+.clear{
+    width : 30px;
+    height: 30px;
+    position: absolute;
+    right:20px;
+    top: 20px;
+}
+.clear i{
+    font-size: 30px;
+    color: #FFF;
+}
+.clear i:hover{
+    cursor: pointer;
+    text-shadow: 1px 3px 5px #000;
+    transform: rotate(45deg);
+}
+
+#date{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #FFF;
+    font-size: 25px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* contenido  */
+.contenido{
+    width:380px;
+    height: 350px;
+    max-height:350px;
+    background-color: #FFF;
+    overflow: auto;
+}
+.contenido::-webkit-scrollbar { 
+    display: none; 
+}
+.contenido ul{
+    padding:0;
+    margin:0;
+}
+.item{
+    width:380px;
+    height: 45px;
+    min-height: 45px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.item i.co{
+    position: absolute;
+    font-size: 25px;
+    padding-left:5px;
+    left:15px;
+    top:10px;
+}
+.item i.co:hover{
+    cursor: pointer;
+}
+.fa-check-circle{
+    color:#6eb200;
+}
+
+.item p.text{
+    position: absolute;
+    padding:0;
+    margin:0;
+    font-size: 20px;
+    left:50px;
+    top:5px;
+    background-color: #FFF;
+    max-width:285px;
+}
+
+.lineThrough{
+    text-decoration: line-through;
+    color : #ccc;
+}
+.item i.de{
+    position: absolute;
+    font-size: 25px;
+    right:15px;
+    top:10px;
+}
+.item i.de:hover{
+    color:#af0000;
+    cursor: pointer;
+}
+
+/* Add Item  */
+.add-item{
+    position: relative;
+    width: 360px;
+    height:40px;
+    background-color: #FFF;
+    padding: 10px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+.add-item i{
+    position: absolute;
+    font-size: 40px;
+    color: #4162f6;
+}
+
+.add-item input{
+    position: absolute;
+    left: 50px;
+    height: 35px;
+    width: 310px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    padding-left:10px;
+}
+.add-item input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-item input::-moz-placeholder { /* Firefox 19 */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-item input:-ms-input-placeholder { /* IE 10 */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-item input:-moz-placeholder { /* Firefox 18 */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
 ```
 
 ## [Anterior](https://github.com/WorkshopTechnology/Materiales/blob/master/Talleres/CuentosDeJavascript/1.5.-comentariosVariables,prettyThings.md) - [Siguiente](https://github.com/WorkshopTechnology/Materiales/blob/master/Talleres/CuentosDeJavascript/4.-%20reusandoConFunciones.md)
