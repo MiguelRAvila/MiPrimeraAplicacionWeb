@@ -127,7 +127,54 @@ Primero tenemos un ``div`` con una clase "contenido". Este contenido tiene tendr
     background-color: #FFF;
     overflow: auto;
 }
+
+.contenido::-webkit-scrollbar { 
+    display: none; 
+}
 ```
+Dentro de nuestro contenido, encontramos la etiqueta ``ul`` la cual nos permitirá comenzar una lista, este elemento tiene las propiedades:
+
+```css
+.contenido ul{
+    padding:0;
+    margin:0;
+}
+```
+#### ✏ ¿Qué diseño tendrá cada To-do?
+Este diseño pertenece a cada elemento ``li`` con la clase "item". Las propiedades más relevantes a mencionar son:
+
+* La propiedad ``position`` tiene un valor "relative" pues buscamos que el elemento permanezca dentro del contenido. 
+* El ``border-bottom`` le da a nuestro elemento la pequeña linea debaj o para diferenciar las tareas que agreguemos.
+
+```css
+.item{
+    width:380px;
+    height: 45px;
+    min-height: 45px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+```
+Cada una de nuestras tareas contará con diferentes iconos que nos servirán para marcarlas como tareas ya realizadas y para eliminarlas cuando ya no las necesitemos en la lista. Por ello, estos pequeños elementos tienen ciertas propiedades como la Pseudoclase ``hover`` para que hagan algo especifico cuando el usuario ponga el cursor sobre ellas.
+
+Comencemos con el pequeño circulo al lado izquierdo. Este es el que nos indica si la tarea ya se realizo o no. Sus propiedades son:
+```css
+.item i.co{
+    position: absolute;
+    font-size: 25px;
+    padding-left:5px;
+    left:15px;
+    top:10px;
+}
+
+.item i.co:hover{
+    cursor: pointer;
+}
+```
+
 ### 📎 ¿Dónde añadimos un elemento a la lista?
 Dentro de nuestro ``div`` con clase "add-item" encontraremos el ícono de añadir una nueva tarea a la lista, así como un ``input`` para que el usuario ingrese su tarea. 
 
