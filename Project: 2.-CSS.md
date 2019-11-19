@@ -272,7 +272,7 @@ Por último, daremos estilo al ``input``
 }
 ```
 ## 👅 Resumen del css
-Al final de cada paso para llegar a nuestra primera Aplicación Web, pondré un ejemplo de como debió quedar tu código para poder continuar con el taller ❤. Tu ``HTML`` debe lucir de esta forma:
+Al final de cada paso para llegar a nuestra primera Aplicación Web, pondré un ejemplo de como debió quedar tu código para poder continuar con el taller ❤. Tu ``CSS`` debe lucir de esta forma:
 
 ```css
 /* Body */
