@@ -18,7 +18,7 @@ body{
     font-family: 'Titillium Web', sans-serif;
 }
 ```
-### 🖍 Hora de diseñar clases
+### 🖍 Hora de diseñar clases con el Contenido
 Para poder añadir un diseño css a una clase, se usa el ``.`` antes del nombre de la clase para poder modificar su diseño. Primero haremos cambios al contenedor con la etiqueta ``.contenedor``.
 
 * El ``padding`` es de 10px
@@ -96,21 +96,37 @@ En cambio, en su segundo diseño, tenemos algo sumamente curioso. Este ".clear i
 }
 ```
 
+#### 📆 La fecha y sus propiedades
+
+Como podrán apreciar en nuestro diseño, tenemos un pequeño texto que nos enseña la fecha del día en el que nos encontramos. Algo que debemos tomar en cuenta es que usamos una id para poder modificar sus propiedades. Para conseguir ese diseño, debemos trabajar sobre estas propiedades:
+
+* La propiedad ``position`` tiene el valor "absolute" para poder manejar su pocisión de forma manual
+* Las propiedades ``botton`` y ``left`` se usan para posicionarlo como lo vemos en el diseño original
+* Para modificar la fuente usamos las propiedades de ``color`` (con valor de #FFF), ``font-size`` (con valor de 25px) y ``font-family`` (para asignarle la fuente que descargamos anteriormente).
+
+```css
+#date{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #FFF;
+    font-size: 25px;
+    font-family: 'Titillium Web', sans-serif;
+}
+```
 
 
-### 📃 Nuestro contenido: la lista
-En nuestro contenido, más especificamente, dentro de nuestra ``ul`` con una id de "lista" escribiremos un item de ejemplo para que podamos guiarnos y más tarde lo diseñemos de la mejor forma posible. 
+### 📃 Diseñemos nuestra lista (contenido)
+Primero tenemos un ``div`` con una clase "contenido". Este contenido tiene tendrá en su interior a los elementos de la lista o "items". El contenido tiene las siguientes propiedades: 
 
-```html
-        <div class="contenedor">
-            <ul id="lista">
-                <li class="item">
-                    <i class="fa fa-circle-thin co" job="complete" id="0"></i>
-                    <p class="text">Tomar un café</p>
-                    <i class="fa fa-trash-o de" job="delete" id="0"></i>
-                </li>
-            </ul>
-        </div>
+```css
+.contenido{
+    width:380px;
+    height: 350px;
+    max-height:350px;
+    background-color: #FFF;
+    overflow: auto;
+}
 ```
 ### 📎 ¿Dónde añadimos un elemento a la lista?
 Dentro de nuestro ``div`` con clase "add-item" encontraremos el ícono de añadir una nueva tarea a la lista, así como un ``input`` para que el usuario ingrese su tarea. 
