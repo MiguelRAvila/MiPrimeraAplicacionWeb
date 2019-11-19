@@ -1,26 +1,26 @@
-# 💼 Let´s work hard...
+# 🧠 Comencemos con Javascript
 
-<p align="center">
-  <img  src="https://github.com/MiguelRAvila/MiPrimeraAplicacionWeb/blob/master/image4.png">
-</p>
+En este momento comenzaremos con los pasos para elaborar el cerebro de nuestra aplicación web. 
 
-## 💀 Primero el esqueleto
-Primero, lo más divetido. Hacer un documento HTML básico con su ``head`` y ``body``, además de las etiquetas meta. Eso, o si tenemos Visual Studio Code, solamente escribir ``html:5``. 
+## ✔ Seleccionar elementos
+Primero debemos seleccionar que elementos de nuestro documento html necesitaremos para comenzar a trabajar. Para ello, utilizaremos la interfaz ``document`` para decirle a nuestro código que trabajaremos en el documento HTML al que esta vinculado. Tambien usaremos los metodos ``querySelector`` y ``getElementById``.
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+### querySelector
+El metodo ``querySelector`` nos devuelve el primer elemento del documento (utilizando un recorrido ordenado de los nodos de nuestro documento) que coincida con el grupo especificado de selectores. En este caso, queremos que busque el elemento que tenga la clase ".clear".Y el elemento que nos devuelva lo guardamos en la constante ``clear``. 
+
+```js
+const clear = document.querySelector(".clear");
 ```
+
+### getElementById
+El metodo ``getElementById`` nos devuelve el elemento que contenga el id único (sensible a mayusculas) de nuestro documento. En este caso lo usaremos para obtener los elementos de la fecha, lista y nuestro input.
+
+```js
+const dateElement = document.getElementById("date");
+const list = document.getElementById("lista");
+const input = document.getElementById("input");
+```
+
 ### 📏 Maquetemos
 Debemos tener muy en cuenta cual es el contenido de nuestra aplicación web y como podemos maquetarla para que podamos añadirle estilos y posteriormente darle funcionalidad con Javascript. Esto lo haremos en el ``<body>`` y usaremos las siguientes etiquetas:
 
