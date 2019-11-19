@@ -30,6 +30,28 @@ const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 ```
 
+## 📆 ¿Como mostramos la fecha?
+Para mostrar la fecha de nuestro documento, necesitaremos llamar a la constante que declaramos arriba ``dateElement`` y usaremos su propiedad ``innerHTML``, esto lo igualaremos al metodo ``toLocaleDateString()`` que contendrá en sus parentesis dos propiedades ("Lugar y lengua de fecha", "opciones")
+
+```js
+dateElement.innerHTML = today.toLocaleDateString("es-US", options);
+```
+
+Declaremos arriba de este codigo una constante llamada ``options`` la cual contendrá las propiedades que mostrarán la forma en como se verá nuestra fecha. Estas propiedades son ``month``, ``day`` y ``weekday``, las cuales nos permitirán cambiar la forma en como se ve el mes, la fecha y el día respectivamente. 
+
+```js
+const options = { month:"short", day:"numeric", weekday:"long"};
+```
+
+Tambien declararemos una constante llamada ``today`` para almacenar dicha fecha. Ya habiendo terminado todo esto, nuestro código lucirá asi:
+
+```js
+const options = { month:"short", day:"numeric", weekday:"long"};
+const today = new Date();
+
+dateElement.innerHTML = today.toLocaleDateString("es-US", options);
+```
+
 ## 👅 Resumen
 Al final de cada paso para llegar a nuestra primera Aplicación Web, pondré un ejemplo de como debió quedar tu código para poder continuar con el taller ❤. Tu  documento ``js`` debe lucir de esta forma:
 
@@ -45,6 +67,12 @@ const input = document.getElementById("input");
 const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
+
+// Mostrar fecha
+const options = { month:"short", day:"numeric", weekday:"long"};
+const today = new Date();
+
+dateElement.innerHTML = today.toLocaleDateString("es-US", options);
 
 ```
 
