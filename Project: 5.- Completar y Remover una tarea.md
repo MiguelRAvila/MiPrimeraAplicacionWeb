@@ -1,15 +1,31 @@
 # 🔄 Complete, Remove, Repeat
 
-En esta sección aprenderemos a completary remover nuestras tareas asi como a escuchar cuando el usuario realiza estas acciones. Para esta sección necesitaremos los conocimientos básicos de los metodos ``toggle`` asi como de ``classList`` , ``parentNode`` y ``querySelector``
+En esta sección aprenderemos a completary remover nuestras tareas asi como a escuchar cuando el usuario realiza estas acciones. Para esta sección necesitaremos los conocimientos básicos de los metodos ``toggle`` asi como de ``classList`` y ``parentNode`` 
 
-## ✔ Seleccionar elementos
-Primero debemos seleccionar que elementos de nuestro documento html necesitaremos para comenzar a trabajar. Para ello, utilizaremos la interfaz ``document`` para decirle a nuestro código que trabajaremos en el documento HTML al que esta vinculado. Tambien usaremos los metodos ``querySelector`` y ``getElementById``.
+## 📚 Conceptos de está sección
 
-### querySelector
-El metodo ``querySelector`` nos devuelve el primer elemento del documento (utilizando un recorrido ordenado de los nodos de nuestro documento) que coincida con el grupo especificado de selectores. En este caso, queremos que busque el elemento que tenga la clase ".clear".Y el elemento que nos devuelva lo guardamos en la constante ``clear``. 
+El metodo ``toggle`` nos proporciona la capacidad de mostrar u ocultar elementos y contenido de nuestro sitio web. En este caso mostraremos y ocultaremos clases.
+
+Usar ``classList`` es una forma práctica de acceder a la lista de clases de un elemento como una cadena de texto delimitada por espacios a través de element.className.
+
+La propiedad de sólo lectura ``node.parentNode`` devuelve el padre del nodo. 
+
+## ✔Completando una tarea
+Para decirle a nuestra aplicación que se ha acompletado o removido una tarea, primero debemos crear las funciones de completado y de removido. Entonces creamos una función:
 
 ```js
-const clear = document.querySelector(".clear");
+function completeToDo(element) {
+  
+}
+```
+Luego, agregaremos los elementos que cambiaremos, en este caso, si una tarea es completada, queremos que el ícono del circulo cambie al igual que el texto, el cual ahora estará tachado. En caso de que el usuario quite el completado a la tarea, tambien queremos que cambie para mostrar que la tarea aún no ha sido completada, esto lo lograremos de la siguiente forma:
+
+```js
+function completeToDo(element) {
+  element.classList.toggle(CHECK);
+  element.classList.toggle(UNCHECK);
+  element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+}
 ```
 
 ### getElementById
