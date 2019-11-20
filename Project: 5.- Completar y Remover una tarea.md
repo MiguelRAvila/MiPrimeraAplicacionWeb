@@ -27,45 +27,62 @@ function completeToDo(element) {
   element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
 }
 ```
-
-### getElementById
-El metodo ``getElementById`` nos devuelve el elemento que contenga el id único (sensible a mayusculas) de nuestro documento. En este caso lo usaremos para obtener los elementos de la fecha, lista y nuestro input.
+Y ahora debemos actualizar el estado de esta tarea en el objeto:
 
 ```js
-const dateElement = document.getElementById("date");
-const list = document.getElementById("lista");
-const input = document.getElementById("input");
+function completeToDo(element) {
+  element.classList.toggle(CHECK);
+  element.classList.toggle(UNCHECK);
+  element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+  
+  LIST[element.id].done = LIST[element.id].done ? false : true;
+}
 ```
-
-## 👀 Declarando clases
-Como mencionamos anteriormente en el apartado de css y de html, declaramos ciertas clases y les dimos cierto diseño para poder usarlas posteriormente. Es en este momento donde declararemos estas clases en constanes para poder usarlas de una forma mas sencilla en el futuro. Esto se hace para no tener que escribir el nombre completo de la clase sino simplemente llamarla mediante una constante declarada. Las declararemos en mayusculas para diferenciarlas del resto. 
+## ❌Completando una tarea
+Ahora, para decirle a nuestra aplicación que la tarea se ha removido, debemos crear una función:
 
 ```js
-const CHECK = "fa-check-circle";
-const UNCHECK = "fa-circle-thin";
-const LINE_THROUGH = "lineThrough";
+function removeToDo(element) {
+  
+}
 ```
-
-## 📆 ¿Como mostramos la fecha?
-Para mostrar la fecha de nuestro documento, necesitaremos llamar a la constante que declaramos arriba ``dateElement`` y usaremos su propiedad ``innerHTML``, esto lo igualaremos al metodo ``toLocaleDateString()`` que contendrá en sus parentesis dos propiedades ("Lugar y lengua de fecha", "opciones")
+En este momento lo que hacemos es darle funcionalidad, usaremos el ``element.parentNode`` para remover el elemento y luego marcaremos como verdadera a la  variable trash.
 
 ```js
-dateElement.innerHTML = today.toLocaleDateString("es-US", options);
+function removeToDo(element) {
+    element.parentNode.parentNode.removeChild(element.parentNode);
+
+    LIST[element.id].trash = true;
+}
 ```
-
-Declaremos arriba de este codigo una constante llamada ``options`` la cual contendrá las propiedades que mostrarán la forma en como se verá nuestra fecha. Estas propiedades son ``month``, ``day`` y ``weekday``, las cuales nos permitirán cambiar la forma en como se ve el mes, la fecha y el día respectivamente. 
+## 🎯Target Element
+Ahora crearemos la sección que escucha cuando el usuario clickea uno de los elementos para completar o remover una tarea, esto lo haremos con un ``addEventListener`` de la siguiente forma:
 
 ```js
-const options = { month:"short", day:"numeric", weekday:"long"};
+list.addEventListener("click", function(event){
+
+    const element = event.target;
+    const elementJob = element.attributes.job.value;
+    
+} );
 ```
+Declaramos un evento de tipo "clicK" y una función para realizar. Lo primero que hacemos es declarar las constantes element, y elementJob. Las cuales ya hemos utilizado para las funciones de completado y remover tareas. 
 
-Tambien declararemos una constante llamada ``today`` para almacenar dicha fecha. Ya habiendo terminado todo esto, nuestro código lucirá asi:
+Ahora, lo que haremos es añadir una condicional y dependiendo de que atributo se añadio al ``elementJob``, realizaremos o un completado o un removido de la tarea. (El valor del ``elementJob`` se consigue del código de cada tarea)
 
 ```js
-const options = { month:"short", day:"numeric", weekday:"long"};
-const today = new Date();
+list.addEventListener("click", function(event){
 
-dateElement.innerHTML = today.toLocaleDateString("es-US", options);
+    const element = event.target;
+    const elementJob = element.attributes.job.value;
+    
+        if (elementJob == "complete") {
+        completeToDo(element);
+        }else if(elementJob == "delete") {
+        removeToDo(element);
+        }
+    
+} );
 ```
 
 ## 👅 Resumen
@@ -73,22 +90,37 @@ Al final de cada paso para llegar a nuestra primera Aplicación Web, pondré un 
 
 ```js
 
-//Select the elements
-const clear = document.querySelector(".clear");
-const dateElement = document.getElementById("date");
-const list = document.getElementById("lista");
-const input = document.getElementById("input");
+// Completar una tarea
 
-//Classes names
-const CHECK = "fa-check-circle";
-const UNCHECK = "fa-circle-thin";
-const LINE_THROUGH = "lineThrough";
+function completeToDo(element) {
+    element.classList.toggle(CHECK);
+    element.classList.toggle(UNCHECK);
+    element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
 
-// Mostrar fecha
-const options = { month:"short", day:"numeric", weekday:"long"};
-const today = new Date();
+    LIST[element.id].done = LIST[element.id].done ? false : true;
 
-dateElement.innerHTML = today.toLocaleDateString("es-US", options);
+}
+
+// Remover una tarea
+function removeToDo(element) {
+    element.parentNode.parentNode.removeChild(element.parentNode);
+
+    LIST[element.id].trash = true;
+
+}
+
+// Target elements
+
+list.addEventListener("click", function(event){
+    const element = event.target;
+    const elementJob = element.attributes.job.value;
+
+    if (elementJob == "complete") {
+        completeToDo(element);
+    }else if(elementJob == "delete") {
+        removeToDo(element);
+    }
+} );
 
 ```
 
