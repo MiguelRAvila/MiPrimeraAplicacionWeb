@@ -107,46 +107,71 @@ function addToDo(toDo){
    list.insertAdjacentHTML(position, item);
 }
 ```
-
-El metodo ``getElementById`` nos devuelve el elemento que contenga el id único (sensible a mayusculas) de nuestro documento. En este caso lo usaremos para obtener los elementos de la fecha, lista y nuestro input.
-
-```js
-const dateElement = document.getElementById("date");
-const list = document.getElementById("lista");
-const input = document.getElementById("input");
-```
-
-## 👀 Declarando clases
-Como mencionamos anteriormente en el apartado de css y de html, declaramos ciertas clases y les dimos cierto diseño para poder usarlas posteriormente. Es en este momento donde declararemos estas clases en constanes para poder usarlas de una forma mas sencilla en el futuro. Esto se hace para no tener que escribir el nombre completo de la clase sino simplemente llamarla mediante una constante declarada. Las declararemos en mayusculas para diferenciarlas del resto. 
+Para comprobar que todo esto funciona de forma correcta, haremos una prueba llamando la funcion con el parametro "Beber café"
 
 ```js
-const CHECK = "fa-check-circle";
-const UNCHECK = "fa-circle-thin";
-const LINE_THROUGH = "lineThrough";
+addToDo("Beber café");
+}
 ```
 
-## 📆 ¿Como mostramos la fecha?
-Para mostrar la fecha de nuestro documento, necesitaremos llamar a la constante que declaramos arriba ``dateElement`` y usaremos su propiedad ``innerHTML``, esto lo igualaremos al metodo ``toLocaleDateString()`` que contendrá en sus parentesis dos propiedades ("Lugar y lengua de fecha", "opciones")
+## 💻 Escuchemos una tecla
+Para escuchar una tecla necesitaremos unos pequeños conceptos extra que son el ``addEventListener`` y que es un "keyup". Explicados de forma breve, el metodo ``addEventListener`` nos ayuda a literalmente "escuchar" cuando el usuario interactua con nuestra aplicación de cualquier forma y "keyup" es una sintaxis que nos devuelve el numero asignado a cada tecla de nuestro teclado.
+
+Para comenzar a escuchar cuando el usuario teclea ENTER, comenzaremos usando el ``addEventListener``:
 
 ```js
-dateElement.innerHTML = today.toLocaleDateString("es-US", options);
+document.addEventListener("keyup", function(even) {
+  if(event.keyCode == 13) {
+    const toDo =input.value;
+    
+    //Checar si el input no esta vacio
+    if(toDo) {
+      addToDo(toDo);
+    }
+    //Luego, vaciamos el input
+    input.value = "";
+  }
+});
 ```
-
-Declaremos arriba de este codigo una constante llamada ``options`` la cual contendrá las propiedades que mostrarán la forma en como se verá nuestra fecha. Estas propiedades son ``month``, ``day`` y ``weekday``, las cuales nos permitirán cambiar la forma en como se ve el mes, la fecha y el día respectivamente. 
+Luego de hacer esto, necesitaremos añadir nuevos parametros a nuestra funcion addToDo (añadimos las variables ``id``, ``done`` y ``trash``) Asi como remplazamos los valores de la id por esta misma variable. 
 
 ```js
-const options = { month:"short", day:"numeric", weekday:"long"};
-```
+function addToDo(toDo, id, done, trash){
+     
+     const item = `
 
-Tambien declararemos una constante llamada ``today`` para almacenar dicha fecha. Ya habiendo terminado todo esto, nuestro código lucirá asi:
+     <li class="item">
+          <i class="fa fa-circle-thin co" job="complete" id="${id}"></i>
+          <p class="text">${toDo}</p>
+          <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
+     </li>
+
+     `;
+    
+    const position = "beforeend";
+    
+   list.insertAdjacentHTML(position, item);
+}
+```
+Ahora debemos preguntarle al sistema si la tarea ha sido eliminada, si ha sido completada y si esta tachada con una linea, lo haremos de la siguiente forma:
 
 ```js
-const options = { month:"short", day:"numeric", weekday:"long"};
-const today = new Date();
+if(trash){ return; }
 
-dateElement.innerHTML = today.toLocaleDateString("es-US", options);
+const DONE = done ? CHECK : UNCHECK;
+const LINE = done ? LINE_THROUGH : "";
+
+     const item = `
+
+     <li class="item">
+          <i class="fa ${DONE} co" job="complete" id="${id}"></i>
+          <p class="text ${LINE}">${toDo}</p>
+          <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
+     </li>
+
+     `;
+
 ```
-
 ## 👅 Resumen
 Al final de cada paso para llegar a nuestra primera Aplicación Web, pondré un ejemplo de como debió quedar tu código para poder continuar con el taller ❤. Tu  documento ``js`` debe lucir de esta forma:
 
