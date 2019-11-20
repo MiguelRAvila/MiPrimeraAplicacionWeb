@@ -3,7 +3,7 @@ Este es el último paso de nuestra aplicación web, aquí guardaremos nuestra in
 
 ## 🤗 Conceptos
 ### 🤔 ¿LocalStorage?
-Cuando se desarrolla una aplicación compleja, es muy habitual utilizar una y otra vez las mismas instrucciones. Para ello se crearon las funciones, las cuales son un conjunto de instrucciones que se agrupan para realizar una tarea concreta y que se pueden reutilizar fácilmente. 
+Cuando queremos que ciertos datos, variables o información se guarden en la memoria local del usuario, usamos la herramienta ``localStorage`` para hacerlo. Esta herramienta tiene diferentes métodos a utilizar, como lo son el ``setItem`` que sirve para almacenar, o el ``getItem`` que nos sirve para obtener información del almacenamiento local. Usaremos esta herramienta para guardar nuestras tareas y recuperarlas cuando recarguemos la página.
 
 ### querySelector
 El metodo ``querySelector`` nos devuelve el primer elemento del documento (utilizando un recorrido ordenado de los nodos de nuestro documento) que coincida con el grupo especificado de selectores. En este caso, queremos que busque el elemento que tenga la clase ".clear".Y el elemento que nos devuelva lo guardamos en la constante ``clear``. 
@@ -53,7 +53,7 @@ document.addEventListener("keyup", function (event) {
                 done: false,
                 trash: false,
             });
-            // Añadir items al almacenamiento local
+            // Añadir tares al almacenamiento local
             localStorage.setItem("TODO", JSON.stringify(LIST));
             id++;
         }
@@ -72,17 +72,73 @@ list.addEventListener("click", function (event) {
         removeToDo(element);
     }
 
-    // Añadir items al almacenamiento local
+    // Añadir tares al almacenamiento local
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
 ```
-
-
-## 👅 Resumen
-Al final de cada paso para llegar a nuestra primera Aplicación Web, pondré un ejemplo de como debió quedar tu código para poder continuar con el taller ❤. Tu  documento ``js`` debe lucir de esta forma:
+### 💾Recuperemos tareas del almacenamiento local
+Para recuperar nuestras tareas del almacenamiento local del usuario, nosotros declararemos otra variable, la cual llamaremos ``data``, para almacenar ahi toda esa información que guardamos. Eso lo haremos usando el metodo ``getItem`` del ``localStorage`` para recuperar dicha información.
 
 ```js
+//Obtener las tareas del almacenamiento local
+let data = localStorage.getItem("TODO");
+```
+Ahora, lo más importante, necesitaremos una condicional, ya que si la variable ``data`` está vacia, significará que el usuario no tenia tareas guardadas cuando dejo de usar la aplicación, o es la primera vez que la usa. 
 
+En caso de que la variable "data" tenga algo dentro, nosotros recuperaremos esos valores y los recuperaremos con ``JSON.parse()`` y ``.length`` para almacenarlos de vuelta en LIST e Id respectivamente. Y entonces podremos cargar esa información con la función ``loadItem`` que crearemos proximamente (en 5 minutos).
+
+Sin embargo, si no existen datos dentro, lo que haremos es darle un valor 0 a las variables LIST e Id.
+
+```js
+if (data) {
+
+    LIST = JSON.parse(data);
+    id = LIST.length;
+    loadList(LIST);
+    
+} else {
+
+    LIST = [];
+    id = 0;
+}
+```
+### 💽¡Carguemos las tareas!
+Para finalizar con nuestra aplicación, crearemos la función que cargará las tareas que recuperamos en el paso anterior y las mostrará al usuario. Esto lo lograremos creando una función llamada ``loadList`` que usará un "array" como parametro:
+
+```js
+function loadList(array){
+
+}
+```
+Y ahora, tenemos que hacer un loop, con otra función dentro de nuestra función con el array junto con el metodo ``forEach``, con parametro de ``item`` para modificar todos los elementos de nuestra LISTA.
+
+```js
+//Cargar items
+function loadList(array) {
+
+    array.forEach(function (item) {
+    
+
+    });
+}
+```
+Ahora, dentro de esta nueva función, llamaremos a nuestra vieja amiga, la función ``addTodo`` y le asignaremos los valores "(item.name, item.id, item.done, item.trash)" de esta forma:
+
+```js
+//Cargar tareas
+function loadList(array) {
+
+    array.forEach(function (item) {
+    
+    addToDo(item.name, item.id, item.done, item.trash);
+    
+    });
+}
+```
+## 👅 Resumen
+Ya hemos finalizado nuestro código de Javascript! Y si todo ha salido bien, tu código ``js`` debe lucir de la siguiente forma:
+
+```js
 //Select the elements
 const clear = document.querySelector(".clear");
 const dateElement = document.getElementById("date");
@@ -94,11 +150,126 @@ const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
+//Variables
+
+let LIST, id;
+
+//Obtener las tareas del almacenamiento local
+let data = localStorage.getItem("TODO");
+
+if (data) {
+    LIST = JSON.parse(data);
+    id = LIST.length;
+    loadList(LIST);
+} else {
+    LIST = [];
+    id = 0;
+}
+
+//Cargar tareas
+function loadList(array) {
+    array.forEach(function (item) {
+        addToDo(item.name, item.id, item.done, item.trash);
+    });
+}
+
+//Clear Button
+clear.addEventListener("click", function () {
+    localStorage.clear();
+    location.reload();
+})
+
 // Mostrar fecha
-const options = { month:"short", day:"numeric", weekday:"long"};
+const options = { month: "short", day: "numeric", weekday: "long" };
 const today = new Date();
 
 dateElement.innerHTML = today.toLocaleDateString("es-US", options);
+
+// Añadir una tarea
+
+function addToDo(toDo, id, done, trash) {
+
+    if (trash) {
+        return;
+    }
+
+    const DONE = done ? CHECK : UNCHECK;
+    const LINE = done ? LINE_THROUGH : "";
+
+    const item = `
+
+    <li class="item">
+        <i class="fa ${DONE} co" job="complete" id=${id}></i>
+        <p class="text ${LINE}">${toDo}</p>
+        <i class="fa fa-trash-o de" job="delete" id=${id}></i>
+    </li>
+
+    `;
+    const position = "beforeend";
+
+    list.insertAdjacentHTML(position, item);
+
+}
+
+// Escuchar Enter
+
+document.addEventListener("keyup", function (event) {
+    if (event.keyCode == 13) {
+        const toDo = input.value;
+        //Checar si el input no esta vacio
+        if (toDo) {
+            addToDo(toDo, id, false, false);
+            LIST.push({
+                name: toDo,
+                id: id,
+                done: false,
+                trash: false,
+            });
+            // Añadir tares al almacenamiento local
+            localStorage.setItem("TODO", JSON.stringify(LIST));
+            //Añadimos una unidad al valor de la id
+            id++;
+        }
+        //Luego, vaciamos el input
+        input.value = "";
+    }
+});
+
+// Completar una tarea
+
+function completeToDo(element) {
+    element.classList.toggle(CHECK);
+    element.classList.toggle(UNCHECK);
+    element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+
+    LIST[element.id].done = LIST[element.id].done ? false : true;
+
+}
+
+// Remover una tarea
+function removeToDo(element) {
+    element.parentNode.parentNode.removeChild(element.parentNode);
+
+    LIST[element.id].trash = true;
+
+}
+
+// Target elements
+
+list.addEventListener("click", function (event) {
+    const element = event.target;
+    const elementJob = element.attributes.job.value;
+
+    if (elementJob == "complete") {
+        completeToDo(element);
+    } else if (elementJob == "delete") {
+        removeToDo(element);
+    }
+
+    // Añadir tares al almacenamiento local
+    localStorage.setItem("TODO", JSON.stringify(LIST));
+});
+
 
 ```
 
