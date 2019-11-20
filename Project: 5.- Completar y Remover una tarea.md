@@ -38,7 +38,7 @@ function completeToDo(element) {
   LIST[element.id].done = LIST[element.id].done ? false : true;
 }
 ```
-## ❌Completando una tarea
+## ❌Removiendo una tarea
 Ahora, para decirle a nuestra aplicación que la tarea se ha removido, debemos crear una función:
 
 ```js
