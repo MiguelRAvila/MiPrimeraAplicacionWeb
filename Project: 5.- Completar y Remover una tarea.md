@@ -1,6 +1,6 @@
 # 🔄 Complete, Remove, Repeat
 
-En esta sección aprenderemos a completary remover nuestras tareas asi como a escuchar cuando el usuario realiza estas acciones. Para esta sección necesitaremos los conocimientos básicos de los metodos ``toggle`` asi como de ``classList`` y ``parentNode`` 
+En esta sección aprenderemos a completar y remover nuestras tareas asi como a escuchar cuando el usuario realiza estas acciones. Para esta sección necesitaremos los conocimientos básicos de los metodos ``toggle`` asi como de ``classList`` y ``parentNode`` 
 
 ## 📚 Conceptos de está sección
 
