@@ -1,11 +1,30 @@
-# 🧠 Comencemos con Javascript
+# ⭕ La función To Do
 
-En este momento comenzaremos con los pasos para elaborar el cerebro de nuestra aplicación web. 
+A lo largo de esta siguiente parte de nuestro taller veremos que para lograr añadir nuevos elementos necesitaremos conocimientos las funciones, condicionales, y el metodo insertAdjacentHTML. Para que al momento de teclear ENTER en nuestro teclado se añada una nueva funcion, necesitaremos otros conocimientos como son el metodo addEventListener.
 
-## ✔ Seleccionar elementos
-Primero debemos seleccionar que elementos de nuestro documento html necesitaremos para comenzar a trabajar. Para ello, utilizaremos la interfaz ``document`` para decirle a nuestro código que trabajaremos en el documento HTML al que esta vinculado. Tambien usaremos los metodos ``querySelector`` y ``getElementById``.
+### 👀 ¿Qué es una función?
+Cuando se desarrolla una aplicación compleja, es muy habitual utilizar una y otra vez las mismas instrucciones. Para ello se crearon las funciones, las cuales son un conjunto de instrucciones que se agrupan para realizar una tarea concreta y que se pueden reutilizar fácilmente. 
 
-### querySelector
+La mayor parte de las funciones no necesitan de ningun tipo de información extra, pero en las aplicaciones reales estas necesitan de variables llamadas argumentos. Estos argumentos se indican dentro de parentesis al lado del nombre de la función y se separan con una coma.
+
+Por ejemplo, en una funcion sencilla que quiere sumar dos numeros:
+
+```js
+//Definimos la función
+function suma(numeroa, numerob) {
+  var resultado = numeroa + numerob;
+  alert("El resultado es " + resultado);
+}
+
+//Declaramos los numeros que queremos que sume
+var numeroa = 3;
+var numerob = 4;
+
+//Llamamos a la funcion para que imprima el resultado
+suma(numeroa, numerob);
+```
+
+### 🔀 Condiciones 
 El metodo ``querySelector`` nos devuelve el primer elemento del documento (utilizando un recorrido ordenado de los nodos de nuestro documento) que coincida con el grupo especificado de selectores. En este caso, queremos que busque el elemento que tenga la clase ".clear".Y el elemento que nos devuelva lo guardamos en la constante ``clear``. 
 
 ```js
