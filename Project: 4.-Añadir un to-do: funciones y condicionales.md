@@ -1,7 +1,7 @@
 # ⭕ La función To Do
 
 A lo largo de esta siguiente parte de nuestro taller veremos que para lograr añadir nuevos elementos necesitaremos conocimientos las funciones, condicionales, y el metodo insertAdjacentHTML. Para que al momento de teclear ENTER en nuestro teclado se añada una nueva funcion, necesitaremos otros conocimientos como son el metodo addEventListener.
-
+## 🤗 Conceptos
 ### 👀 ¿Qué es una función?
 Cuando se desarrolla una aplicación compleja, es muy habitual utilizar una y otra vez las mismas instrucciones. Para ello se crearon las funciones, las cuales son un conjunto de instrucciones que se agrupan para realizar una tarea concreta y que se pueden reutilizar fácilmente. 
 
@@ -25,13 +25,89 @@ suma(numeroa, numerob);
 ```
 
 ### 🔀 Condiciones 
-El metodo ``querySelector`` nos devuelve el primer elemento del documento (utilizando un recorrido ordenado de los nodos de nuestro documento) que coincida con el grupo especificado de selectores. En este caso, queremos que busque el elemento que tenga la clase ".clear".Y el elemento que nos devuelva lo guardamos en la constante ``clear``. 
+En las condiciones, como en cualquier otro lenguaje de programación verifica si una condición se cumple como verdadera, en caso de serlo, ejecuta una sentencia y en caso contrario ejecuta otra (o no hace absolutamente nada).
 
 ```js
-const clear = document.querySelector(".clear");
+if(condicion1) {
+  sentencia1
+} else {
+  sentencia1.1
+}
+```
+Otra forma de sintaxis es 
+
+```js
+const name = parametro ? option1 : option2;
+```
+### ✂ insertAdjacentHTML
+Este metodo nos ayudará para insertar una nueva tarea en nuestra aplicacion web. Funciona mediante el uso de dos propiedades ``position`` y ``text``. En la primera indicamos en que parte del documento queremos añadir el texto HTML ( beforebegin, afterbegin, beforeend, afterend ). Y en el text, escribimos que es lo que deseamos agregar a nuestro documento
+
+```js
+element.insertAdjacentHTML(position, text);
+```
+## 🤓 Hora de aplicar los conceptos
+
+### Nuestra funcion addToDo
+Primero debemos definir nuestra función ``addToDo`` para hacer nuestro trabajo más sencillo. Esta funcion usara (de momento) el parametro ``toDo`` para funcionar, el cual será el texto de nuestra tarea.
+
+```js
+function addToDo(toDo){
+  
+}
 ```
 
-### getElementById
+Luego de esto, creamos dentro de la función, nuestro ``insertAdjacentHTML``
+
+```js
+function addToDo(toDo){
+   
+   list.insertAdjacentHTML(position, item);
+}
+```
+Entonces, te darás cuenta de que no tenemos declarados ni ``position`` ni ``item`` entonces los agregaremos arriba. 
+
+La constante ``item`` equivale al ejemplo que colocamos anteriormente en nuestro HTML con algunos cambios ligeros.
+
+```js
+    const item = `
+
+    <li class="item">
+        <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+        <p class="text">${toDo}</p>
+        <i class="fa fa-trash-o de" job="delete" id="0"></i>
+    </li>
+
+    `;
+```
+Mientras que la constante ``position`` tendrá el valor "beforeend" para que cada vez que añadamos una tarea, se agregue hasta el final.
+
+
+```js
+  const position = "beforeend";
+```
+
+De esta forma, nuestra funcion (de momento) lucirá de esta forma:
+
+
+```js
+function addToDo(toDo){
+
+     const item = `
+
+     <li class="item">
+          <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+          <p class="text">${toDo}</p>
+          <i class="fa fa-trash-o de" job="delete" id="0"></i>
+     </li>
+
+     `;
+    
+    const position = "beforeend";
+    
+   list.insertAdjacentHTML(position, item);
+}
+```
+
 El metodo ``getElementById`` nos devuelve el elemento que contenga el id único (sensible a mayusculas) de nuestro documento. En este caso lo usaremos para obtener los elementos de la fecha, lista y nuestro input.
 
 ```js
