@@ -172,6 +172,42 @@ const LINE = done ? LINE_THROUGH : "";
      `;
 
 ```
+Entonces, ahora que hemos logrado que nuestro programa cambie las clases y las ides, así como colocar el texto que queremos para nuestra tarea. Ahora necesitamos declarar un objeto que guarde y reciba el texto, la id, y que conozca si nuestra tarea esta completa o si el usuario la ha borrado, es por ello que debemos declarar estas variables (LISTA, id)
+
+```js
+let LIST = [], 
+id = 0;
+```
+
+Y ahora actualizamos nuestro código usando este nuevo objeto ``LISTA`` que hemos creado. Esta lista guardará los valores ``toDo`` ``id`` ``done`` ``trash``, todo esto usando el método ``PUSH`` para guardar los datos dentro, de esta forma:
+
+```js
+document.addEventListener("keyup", function(even) {
+  if(event.keyCode == 13) {
+    const toDo =input.value;
+    
+    //Checar si el input no esta vacio
+    if(toDo) {
+      addToDo(toDo, id, false, false);
+      
+            LIST.push({
+            name : toDo,
+            id : id, 
+            done: false,
+            trash: false,
+            
+        });
+        id++;
+    }
+    //Luego, vaciamos el input
+    input.value = "";
+  }
+});
+```
+NOTA: Además, debemos de agregar la operación ``id++`` para que las id's de cada tarea sea diferente. (Así, la primera tarea tiene el id=1, la segunda id=2, etc.)
+
+Y ahora podemos comprobar que en nuestra consola de javascript, se estan guardando estos valores. 
+
 ## 👅 Resumen
 Al final de cada paso para llegar a nuestra primera Aplicación Web, pondré un ejemplo de como debió quedar tu código para poder continuar con el taller ❤. Tu  documento ``js`` debe lucir de esta forma:
 
@@ -188,11 +224,64 @@ const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
+//Variables
+let LIST = [], 
+id = 0;
+
 // Mostrar fecha
 const options = { month:"short", day:"numeric", weekday:"long"};
 const today = new Date();
 
 dateElement.innerHTML = today.toLocaleDateString("es-US", options);
+
+//Añadir una tarea
+function addToDo(toDo, id, done, trash){
+    
+    if(trash) {
+        return;
+    }
+    
+    const DONE = done ? CHECK : UNCHECK;
+    const LINE = done ? LINE_THROUGH : "";
+
+    const item = `
+
+    <li class="item">
+        <i class="fa ${DONE} co" job="complete" id=${id}></i>
+        <p class="text ${LINE}">${toDo}</p>
+        <i class="fa fa-trash-o de" job="delete" id=${id}></i>
+    </li>
+
+    `;
+    const position = "beforeend";
+
+    list.insertAdjacentHTML(position, item);
+
+}
+
+//Escuchar Enter
+document.addEventListener("keyup", function(even) {
+  if(event.keyCode == 13) {
+    const toDo =input.value;
+    
+    //Checar si el input no esta vacio
+    if(toDo) {
+      addToDo(toDo, id, false, false);
+      
+            LIST.push({
+            name : toDo,
+            id : id, 
+            done: false,
+            trash: false,
+            
+        });
+        //Añadimos una unidad al valor de la id
+        id++;
+    }
+    //Luego, vaciamos el input
+    input.value = "";
+  }
+});
 
 ```
 
