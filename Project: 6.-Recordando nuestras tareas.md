@@ -5,21 +5,13 @@ Este es el último paso de nuestra aplicación web, aquí guardaremos nuestra in
 ### 🤔 ¿LocalStorage?
 Cuando queremos que ciertos datos, variables o información se guarden en la memoria local del usuario, usamos la herramienta ``localStorage`` para hacerlo. Esta herramienta tiene diferentes métodos a utilizar, como lo son el ``setItem`` que sirve para almacenar, o el ``getItem`` que nos sirve para obtener información del almacenamiento local. Usaremos esta herramienta para guardar nuestras tareas y recuperarlas cuando recarguemos la página.
 
-### querySelector
-El metodo ``querySelector`` nos devuelve el primer elemento del documento (utilizando un recorrido ordenado de los nodos de nuestro documento) que coincida con el grupo especificado de selectores. En este caso, queremos que busque el elemento que tenga la clase ".clear".Y el elemento que nos devuelva lo guardamos en la constante ``clear``. 
+### 🤓JSON
+En palabra simples, JSON es un formato ligero de intercambio de datos. Puede que leerlo y escribirlo es simple para humanos, pero para las máquinas es simple interpretarlo y generarlo. En javascript, usaremos las funciones ``parse`` y ``stringify`` de JSON para interpretar strings y para convertir información a strings respectivamente.
 
-```js
-const clear = document.querySelector(".clear");
-```
+### 😦 Métodos extra que usaremos
+#### lenght
+El metodo .lenght se utiliza para recuperar el ultimo elemento de una variable/objeto de cierta clase. Por ejemplo, nosotros usaremos más adelante este metodo para recuperar el ultimo "id" que se haya guardado. Este metodo devuelve el siguiente elemento del que se almaceno, lo cual significa que si el usuario almacena 10 tareas, el metodo ``lenght`` nos devolvera el id numero 11. 
 
-### getElementById
-El metodo ``getElementById`` nos devuelve el elemento que contenga el id único (sensible a mayusculas) de nuestro documento. En este caso lo usaremos para obtener los elementos de la fecha, lista y nuestro input.
-
-```js
-const dateElement = document.getElementById("date");
-const list = document.getElementById("lista");
-const input = document.getElementById("input");
-```
 
 ## ✏ Apliquemos los conceptos de localStorage
 ### 🔀Cambiemos las variables (again)
