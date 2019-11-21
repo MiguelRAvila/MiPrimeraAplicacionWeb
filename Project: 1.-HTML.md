@@ -112,4 +112,4 @@ Al final de cada paso para llegar a nuestra primera Aplicación Web, pondré un 
 </html>
 ```
 
-## [Anterior](https://github.com/WorkshopTechnology/Materiales/blob/master/Talleres/CuentosDeJavascript/1.5.-comentariosVariables,prettyThings.md) - [Siguiente](https://github.com/WorkshopTechnology/Materiales/blob/master/Talleres/CuentosDeJavascript/4.-%20reusandoConFunciones.md)
+## [Anterior](https://github.com/MiguelRAvila/MiPrimeraAplicacionWeb/blob/master/3.-NuestroProyecto.md) - [Siguiente](https://github.com/MiguelRAvila/MiPrimeraAplicacionWeb/blob/master/Project:%202.-CSS.md)
