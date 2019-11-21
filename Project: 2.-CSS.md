@@ -122,7 +122,7 @@ Como podrán apreciar en nuestro diseño, tenemos un pequeño texto que nos ense
 
 ### 📃 Diseñemos nuestra lista (contenido)
 <p align="center">
-  <img  src="https://github.com/MiguelRAvila/MiPrimeraAplicacionWeb/blob/master/Image7.png">
+  <img  src="https://github.com/MiguelRAvila/MiPrimeraAplicacionWeb/blob/master/image7.png">
 </p>
 Primero tenemos un ``div`` con una clase "contenido". Este contenido tiene tendrá en su interior a los elementos de la lista o "items". El contenido tiene las siguientes propiedades: 
 
@@ -221,7 +221,7 @@ Por último tenemos el icono del bote de basura para poder eliminar nuestra tare
 
 ### 📎 Add-Item, sus estilos 
 <p align="center">
-  <img  src="https://github.com/MiguelRAvila/MiPrimeraAplicacionWeb/blob/master/Image8.png">
+  <img  src="https://github.com/MiguelRAvila/MiPrimeraAplicacionWeb/blob/master/image8.png">
 </p>
 La sección que contiene el espacio donde colocaremos el texto para añadir nuestras tareas, contiene 3 partes escenciales a las que debemos dar forma y estilos. La primera es a toda la sección en si con la clase ``add-item``, el icono de añadir item, y por ultimo el ``input``, que es donde colocamos el texto.
 
