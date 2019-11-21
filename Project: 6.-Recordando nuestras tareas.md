@@ -127,6 +127,18 @@ function loadList(array) {
     });
 }
 ```
+### ❌Borremos todo!
+Ahora, para finalizar nuestro proyecto, y darle funcionalidad al botoncito de "borrar todo" en la esquina superior derecha de nuestro proyecto, nosotros haremos lo siguiente:
+
+Usando la constante que declaramos al inicio ``clear`` y el metodo ``addEventListener``, crearemos una función, que al mometode escuchar un clicl, elimine el localStorage y recargue la página.
+
+```js
+clear.addEventListener("click", function () {
+    localStorage.clear();
+    location.reload();
+})
+```
+
 ## 👅 Resumen
 Ya hemos finalizado nuestro código de Javascript! Y si todo ha salido bien, tu código ``js`` debe lucir de la siguiente forma:
 
@@ -261,8 +273,6 @@ list.addEventListener("click", function (event) {
     // Añadir tares al almacenamiento local
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
-
-
 ```
 
 ## [Anterior](https://github.com/WorkshopTechnology/Materiales/blob/master/Talleres/CuentosDeJavascript/1.5.-comentariosVariables,prettyThings.md) - [Siguiente](https://github.com/WorkshopTechnology/Materiales/blob/master/Talleres/CuentosDeJavascript/4.-%20reusandoConFunciones.md)
