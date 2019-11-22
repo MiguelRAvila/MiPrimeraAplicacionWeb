@@ -2,8 +2,10 @@
 
 En este momento comenzaremos con los pasos para elaborar el cerebro de nuestra aplicación web. 
 
-## ✔ Seleccionar elementos
-Primero debemos seleccionar que elementos de nuestro documento html necesitaremos para comenzar a trabajar. Para ello, utilizaremos la interfaz ``document`` para decirle a nuestro código que trabajaremos en el documento HTML al que esta vinculado. Tambien usaremos los metodos ``querySelector`` y ``getElementById``.
+## 🤗 Conceptos
+
+### Tipos de datos
+En javascript existen muchos tipos de datos, entre los más importantes que usaremos serán las variables, declaradas ``var`` o ``let``, las constantes ``const``, los strings, que son cadenas de caracteres. 
 
 ### querySelector
 El metodo ``querySelector`` nos devuelve el primer elemento del documento (utilizando un recorrido ordenado de los nodos de nuestro documento) que coincida con el grupo especificado de selectores. En este caso, queremos que busque el elemento que tenga la clase ".clear".Y el elemento que nos devuelva lo guardamos en la constante ``clear``. 
@@ -14,6 +16,10 @@ const clear = document.querySelector(".clear");
 
 ### getElementById
 El metodo ``getElementById`` nos devuelve el elemento que contenga el id único (sensible a mayusculas) de nuestro documento. En este caso lo usaremos para obtener los elementos de la fecha, lista y nuestro input.
+
+## ✔ Seleccionar elementos
+Primero debemos seleccionar que elementos de nuestro documento html necesitaremos para comenzar a trabajar. Para ello, utilizaremos la interfaz ``document`` para decirle a nuestro código que trabajaremos en el documento HTML al que esta vinculado. Tambien usaremos los metodos ``querySelector`` y ``getElementById``.
+
 
 ```js
 const dateElement = document.getElementById("date");
