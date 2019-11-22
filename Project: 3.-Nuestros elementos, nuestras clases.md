@@ -31,7 +31,7 @@ const LINE_THROUGH = "lineThrough";
 ```
 
 ## 📆 ¿Como mostramos la fecha?
-Para mostrar la fecha de nuestro documento, necesitaremos llamar a la constante que declaramos arriba ``dateElement`` y usaremos su propiedad ``innerHTML``, esto lo igualaremos al metodo ``toLocaleDateString()`` que contendrá en sus parentesis dos propiedades ("Lugar y lengua de fecha", "opciones")
+Para mostrar la fecha de nuestro documento, necesitaremos llamar a la constante que declaramos arriba ``dateElement`` y usaremos su propiedad ``innerHTML``, esto lo igualaremos al metodo ``toLocaleDateString()`` que contendrá en sus parentesis dos propiedades ("idioma y lugar del idioma", "opciones")
 
 ```js
 dateElement.innerHTML = today.toLocaleDateString("es-US", options);
