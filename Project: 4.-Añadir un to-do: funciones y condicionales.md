@@ -2,6 +2,7 @@
 
 A lo largo de esta siguiente parte de nuestro taller veremos que para lograr añadir nuevos elementos necesitaremos conocimientos las funciones, condicionales, y el metodo insertAdjacentHTML. Para que al momento de teclear ENTER en nuestro teclado se añada una nueva funcion, necesitaremos otros conocimientos como son el metodo addEventListener.
 ## 🤗 Conceptos
+
 ### 👀 ¿Qué es una función?
 Cuando se desarrolla una aplicación compleja, es muy habitual utilizar una y otra vez las mismas instrucciones. Para ello se crearon las funciones, las cuales son un conjunto de instrucciones que se agrupan para realizar una tarea concreta y que se pueden reutilizar fácilmente. 
 
@@ -34,17 +35,33 @@ if(condicion1) {
   sentencia1.1
 }
 ```
-Otra forma de sintaxis es 
+Al igual, existen los operadores condicionales ternarios que usaremos mucho de aquí en adelante. Los componentes que la forman es:
+
+* La condición, que evalua si es verdadera o falsa
+* Las expresiones ``option1`` y ``option2`` que se ejecutaran dependiendo de la condición 
 
 ```js
-const name = parametro ? option1 : option2;
+let nombreDeLaVariable = condición ? option1 : option2;
 ```
+
+Por ejemplo, una función donde queremos saber cual es el valor mayor entre dos numeros:
+
+```js
+let max = ( num1 > num2 ) ? num1 : num2 ;
+//En este caso, si el ``num1`` es mayor a ``num2``, se guardara en la variable ``max`` el ``num1``, y en caso contrario
+// Se guardará el ``num2``
+```
+
 ### ✂ insertAdjacentHTML
 Este metodo nos ayudará para insertar una nueva tarea en nuestra aplicacion web. Funciona mediante el uso de dos propiedades ``position`` y ``text``. En la primera indicamos en que parte del documento queremos añadir el texto HTML ( beforebegin, afterbegin, beforeend, afterend ). Y en el text, escribimos que es lo que deseamos agregar a nuestro documento
 
 ```js
 element.insertAdjacentHTML(position, text);
 ```
+
+### 🔈🔉🔊Los eventos
+Uno de los conceptos que más se usan en la programación es el evento. Pero ¿Qué es un evento? Dicho de forma breve, un evento es un suceso que propicia el usuario, y lo que queremos hacer es escucharlo. Queremos tener una forma de escuchar cuando el usuario hace un click en algún botón, cuando pulsa una tecla o cuando selecciona algo de nuestro sitio web. 
+
 ## 🤓 Hora de aplicar los conceptos
 
 ### Nuestra funcion addToDo
@@ -115,13 +132,15 @@ addToDo("Beber café");
 ```
 
 ## 💻 Escuchemos una tecla
-Para escuchar una tecla necesitaremos unos pequeños conceptos extra que son el ``addEventListener`` y que es un "keyup". Explicados de forma breve, el metodo ``addEventListener`` nos ayuda a literalmente "escuchar" cuando el usuario interactua con nuestra aplicación de cualquier forma y "keyup" es una sintaxis que nos devuelve el numero asignado a cada tecla de nuestro teclado.
+Para escuchar una tecla necesitaremos unos pequeños conceptos extra que son el ``addEventListener`` y que es un "keyup". Explicados de forma breve, el metodo ``addEventListener`` nos ayuda a literalmente "escuchar" cuando el usuario interactua con nuestra aplicación de cualquier forma y "keyup" es una sintaxis que nos devuelve el numero asignado a cada tecla de nuestro teclado. 
+
+Como lo que queremos es escuchar si el usuario tecleo el ENTER, entonces debemos identificar cual es el código que identifica el ordenador (keyCode) de la tecla ENTER. En este caso, lo identifica con el ``13``, cada letra tiene una KeyCode diferente.
 
 Para comenzar a escuchar cuando el usuario teclea ENTER, comenzaremos usando el ``addEventListener``:
 
 ```js
 document.addEventListener("keyup", function(even) {
-  if(event.keyCode == 13) {
+  if(event.keyCode === 13) {
     const toDo =input.value;
     
     //Checar si el input no esta vacio
@@ -183,7 +202,7 @@ Y ahora actualizamos nuestro código usando este nuevo objeto ``LISTA`` que hemo
 
 ```js
 document.addEventListener("keyup", function(even) {
-  if(event.keyCode == 13) {
+  if(event.keyCode === 13) {
     const toDo =input.value;
     
     //Checar si el input no esta vacio
