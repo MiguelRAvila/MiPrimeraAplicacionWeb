@@ -76,7 +76,7 @@ Dentro de nuestro header, tenemos un ``div`` con la clase ``clear`` que represen
 
 #### 🎞 Animaciones y Pseudo-clases
 
-Vayamos aún más allá. Dentro de nuestro ``div`` con clase ``clear`` tenemos una etiqueta ``i``,  en dondé estará el icono que queremos utilizar para borrar todos los elementos de nuestra lista. Este pequeño pero importante elemento contiene dos propiedades muy espaciales que involucran tanto animaciones como algo llamado Pseudo-clases.
+Vayamos aún más allá. Dentro de nuestro ``div`` con clase ``clear`` tenemos una etiqueta ``i``,  en dondé estará el icono que queremos utilizar para borrar todos los elementos de nuestra lista. Este pequeño pero importante elemento contiene dos propiedades muy especiales que involucran tanto animaciones como algo llamado Pseudo-clases.
 
 Primero veamos el comportamiento y diseño que tiene el icono sin activarlo. Su diseño es bastante simple, solamente tiene las propiedades del ``font-size`` con un valor de 30px y su ``color`` con un valor de #FFF para darle un blanco.
 
@@ -259,6 +259,8 @@ Por último, daremos estilo al ``input``
 }
 ```
 ### 💡 Web-kit 
+Como habrán notado cuando descargamos el repositorio de nuestro proyecto, el documento tenía unas cuentas clases con propiedades ya declaradas en la última parte. A esto lo llamamos Webkits! Ya que cada navegador sigue teniendo ciertos elementos diferentes uno con otro, necesitamos de estas lineas de codigo para que nuestra página web luzca bien y como queremos en cada navegador.
+
 ```css
 .add-item input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #4162f6;
