@@ -1,4 +1,4 @@
-# 📦 Guardando en el storage
+# 📦 BONUS: Guardando en el storage
 Este es el último paso de nuestra aplicación web, aquí guardaremos nuestra información para que cuando recarguemos la página, nuestras tareas sigan ahi!
 
 ## 🤗 Conceptos
