@@ -7,12 +7,13 @@
 ## 🎨 ¡Ahora el diseño!
 Para que la aplicación web se vea como la presentamos originalmente, debemos trabajar con un archivo de ``css`` para cambiar y mejorar los diseños. Primero cambiaremos el ``body``, para ello escribiremos la etiqueta "body" completa y realizaremos los siguientes cambios:
 
-* El ``padding`` y el ``margin`` será de 0
+* El ``padding`` será de 10px para que no se pegue con el navegador
+* el ``margin`` será de 0
 * Su ``font-family`` será la que descargamos con Google Fonts
 
 ```css
 body{
-    padding: 0;
+    padding: 10px;
     margin: 0;
     background-color: rgba(0,0,0,0.1);
     font-family: 'Titillium Web', sans-serif;
@@ -21,13 +22,11 @@ body{
 ### 🖍 Hora de diseñar clases con el Contenido
 Para poder añadir un diseño css a una clase, se usa el ``.`` antes del nombre de la clase para poder modificar su diseño. Primero haremos cambios al contenedor con la etiqueta ``.contenedor``.
 
-* El ``padding`` es de 10px
 * Su ``width`` será de 380px, para darle un valor absoluto de ancho
 * Su ``margin`` tiene un valor nulo y ``auto``, para centrar nuestra aplicación.
 
 ```css
 .contenedor{
-    padding:10px;
     width:380px;
     margin:0 auto;
 }
@@ -40,7 +39,7 @@ Para poder añadir un diseño css a una clase, se usa el ``.`` antes del nombre 
 El ``header`` contiene muchos cambios en cuanto a su diseño.
 
 
-* El ``width`` es de 380px para definir su ancho.
+* El ``width`` es de 100% para definir su ancho.
 * Su ``height`` es de 200px para que tenga el largo que vemos en el diseño original
 * Su ``background-image`` tendrá una ``url`` que lo vincule directamente a la imagen que queramos ponerle a nuestra lista
 * Otras propiedades como el ``background-size`` y el ``background-repeat`` se usan para brindarle unas caracteristicas adicionales como el tamaño de 100% 200% para ajustarlo al tamaño del Header, o para decirle a nuestro diseño que no queremos que ese fondo se repita para rellenar el espacio donde se encuentra.
@@ -49,9 +48,9 @@ El ``header`` contiene muchos cambios en cuanto a su diseño.
 
 ```css
 .header{
-    width: 380px;
+    width: 100%;
     height:200px;
-    background-image: url('../img/bg2.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/bg.jpg');
     background-size: 100% 200%;
     background-repeat: no-repeat;
     border-radius: 15px 15px 0 0;
@@ -128,7 +127,7 @@ Primero tenemos un ``div`` con una clase "contenido". Este contenido tiene tendr
 
 ```css
 .contenido{
-    width:380px;
+    width:100%;
     height: 350px;
     max-height:350px;
     background-color: #FFF;
@@ -155,7 +154,7 @@ Este diseño pertenece a cada elemento ``li`` con la clase "item". Las propiedad
 
 ```css
 .item{
-    width:380px;
+    width:100%;
     height: 45px;
     min-height: 45px;
     position: relative;
@@ -228,7 +227,6 @@ La sección que contiene el espacio donde colocaremos el texto para añadir nues
 ```css
 .add-item{
     position: relative;
-    width: 360px;
     height:40px;
     background-color: #FFF;
     padding: 10px;
@@ -288,8 +286,13 @@ Al final de cada paso para llegar a nuestra primera Aplicación Web, pondré un 
 
 ```css
 /* Body */
+
+*, *::before, *::after {
+    transition: .2s;
+}
+
 body{
-    padding: 0;
+    padding: 10px;
     margin: 0;
     background-color: rgba(0,0,0,0.1);
     font-family: 'Titillium Web', sans-serif;
@@ -297,17 +300,15 @@ body{
 
 /* contenedor */
 .contenedor{
-    padding:10px;
-    width:380px;
+    width:100%;
     margin:0 auto;
 }
 
 /* Header  */
 .header{
-    width: 380px;
+    width: 100%;
     height:200px;
-    background-image: url('../img/bg2.jpg');
-    background-size: 100% 200%;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/bg.jpg');
     background-repeat: no-repeat;
     border-radius: 15px 15px 0 0;
     position: relative;
@@ -340,7 +341,7 @@ body{
 
 /* contenido  */
 .contenido{
-    width:380px;
+    width:100%;
     height: 350px;
     max-height:350px;
     background-color: #FFF;
@@ -354,7 +355,7 @@ body{
     margin:0;
 }
 .item{
-    width:380px;
+    width:100%;
     height: 45px;
     min-height: 45px;
     position: relative;
@@ -406,11 +407,11 @@ body{
 /* Add Item  */
 .add-item{
     position: relative;
-    width: 360px;
     height:40px;
     background-color: #FFF;
     padding: 10px;
     border-top: 1px solid rgba(0,0,0,0.1);
+    border-radius: 0 0 15px 15px;
 }
 .add-item i{
     position: absolute;
@@ -422,7 +423,6 @@ body{
     position: absolute;
     left: 50px;
     height: 35px;
-    width: 310px;
     background-color: transparent;
     border: none;
     font-size: 20px;
